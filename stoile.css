@@ -1,8 +1,7 @@
 
 .logo-header-image img {
-    max-width: 100% !important;
+    max-width: 360px !important;
     height: auto    !important;
     margin: 0 auto  !important;
     display: block  !important;
-    border: 2px solid #fff;
 }
