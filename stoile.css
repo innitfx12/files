@@ -1,1 +1,174 @@
-bullshit
+/* fetisch-cam.one — externes Stylesheet (Whitelabel Custom-CSS)
+   Farbwelt aus header.png: Anthrazit-Grund + Gold + Creme, roter Akzent.
+   Alle Regeln unter .fc gescoped, damit das WL-Theme unberuehrt bleibt. */
+
+.fc{
+  --fc-bg:#16181e; --fc-bg2:#23262e;
+  --fc-gold:#d8bc60; --fc-amber:#eac95c; --fc-gold-dim:#9c8340;
+  --fc-cream:#f4efe4; --fc-text:#cfc9bc; --fc-muted:#9a958a;
+  --fc-red:#e23a44;
+  --fc-card1:#20242e; --fc-card2:#191c23;
+  --fc-line:rgba(216,188,96,.16);
+  --fc-line-strong:rgba(216,188,96,.4);
+  max-width:1140px; margin:0 auto; padding:6px 22px 46px;
+  color:var(--fc-text);
+  font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px; line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+}
+.fc *{box-sizing:border-box;}
+.fc p{margin:0 0 15px;}
+.fc a{color:var(--fc-amber); text-decoration:none;}
+.fc a:hover{color:var(--fc-gold); text-decoration:underline;}
+
+/* --- Keywords --- */
+.fc .kw{color:var(--fc-amber); font-weight:700;}
+.fc .kw-red{color:var(--fc-red); font-weight:700;}
+
+/* --- Ueberschriften --- */
+.fc .title{
+  text-align:center; margin:8px 0 6px;
+  font-size:clamp(23px,3.4vw,33px); font-weight:800; letter-spacing:.5px;
+  line-height:1.25;
+  background:linear-gradient(100deg,#fff6e2 0%,var(--fc-amber) 45%,var(--fc-gold-dim) 100%);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:var(--fc-amber);
+  text-shadow:0 1px 0 rgba(0,0,0,.3);
+}
+.fc .h2{
+  text-align:center; color:var(--fc-amber);
+  font-size:clamp(20px,2.6vw,26px); font-weight:800;
+  text-transform:uppercase; letter-spacing:1.4px; margin:6px 0 4px;
+}
+.fc .h3{
+  text-align:center; color:var(--fc-gold);
+  font-size:20px; font-weight:700; letter-spacing:.4px; margin:0 0 14px;
+}
+.fc .h4{
+  text-align:center; color:var(--fc-amber);
+  font-size:18px; font-weight:700; line-height:1.5;
+  max-width:820px; margin:6px auto 4px;
+}
+.fc .h5{
+  text-align:center; color:var(--fc-cream);
+  font-size:21px; font-weight:800; text-transform:uppercase;
+  letter-spacing:1.6px; margin:14px 0 6px;
+}
+
+/* --- Dekorativer Trenner ◆ --- */
+.fc .div{
+  display:flex; align-items:center; justify-content:center;
+  gap:16px; margin:22px 0 20px;
+}
+.fc .div::before, .fc .div::after{
+  content:""; height:1px; width:min(120px,22%);
+  background:linear-gradient(90deg,transparent,var(--fc-line-strong));
+}
+.fc .div::after{background:linear-gradient(90deg,var(--fc-line-strong),transparent);}
+.fc .div i{
+  color:var(--fc-gold); font-style:normal; font-size:12px;
+  letter-spacing:6px; transform:translateY(-1px);
+}
+
+/* --- Lead / Intro --- */
+.fc .lead{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(120% 140% at 0% 0%,rgba(216,188,96,.08),transparent 55%),
+    linear-gradient(160deg,var(--fc-card1),var(--fc-card2));
+  border:1px solid var(--fc-line); border-radius:16px;
+  padding:26px 32px; margin:14px 0 6px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+.fc .lead::before{
+  content:""; position:absolute; inset:0 0 auto 0; height:3px;
+  background:linear-gradient(90deg,transparent,var(--fc-gold),var(--fc-amber),var(--fc-gold),transparent);
+}
+.fc .lead p{margin:0; font-size:16.5px; color:#ddd7ca;}
+.fc .lead p::first-letter{
+  float:left; font-size:52px; line-height:.86; font-weight:800;
+  color:var(--fc-amber); margin:4px 12px 0 0;
+  text-shadow:0 2px 8px rgba(216,188,96,.35);
+}
+
+/* --- Textblock ohne Karte --- */
+.fc .prose{max-width:960px; margin:0 auto 6px;}
+
+/* --- Karte --- */
+.fc .card{
+  position:relative;
+  background:linear-gradient(155deg,var(--fc-card1),var(--fc-card2));
+  border:1px solid var(--fc-line); border-left:3px solid var(--fc-gold);
+  border-radius:13px; padding:22px 26px; margin:18px 0;
+  box-shadow:0 6px 20px rgba(0,0,0,.35);
+  transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+.fc .card::after{content:""; display:block; clear:both;}
+.fc .card:hover{
+  transform:translateY(-3px);
+  border-left-color:var(--fc-amber);
+  box-shadow:0 14px 34px rgba(0,0,0,.5), 0 0 0 1px rgba(216,188,96,.28),
+             0 0 26px -6px rgba(216,188,96,.35);
+}
+.fc .card.alt{background:linear-gradient(155deg,#242835,#1b1f27);}
+
+/* --- Float-Medien --- */
+.fc .media{
+  width:320px; max-width:44%; border-radius:11px;
+  border:1px solid var(--fc-line-strong);
+  box-shadow:0 8px 20px rgba(0,0,0,.5);
+  transition:transform .3s ease, box-shadow .3s ease;
+  display:block;
+}
+.fc .media.left{float:left; margin:2px 22px 12px 0;}
+.fc .media.right{float:right; margin:2px 0 12px 22px;}
+.fc .card:hover .media{transform:scale(1.03); box-shadow:0 12px 26px rgba(0,0,0,.6);}
+
+/* --- Feature-Strip + Hero-Bild --- */
+.fc .strip{
+  display:block; margin:8px auto 22px; max-width:100%; height:auto;
+  border-radius:10px; filter:drop-shadow(0 8px 18px rgba(0,0,0,.5));
+}
+.fc .hero{
+  display:block; margin:22px auto 8px; max-width:100%; height:auto;
+  border-radius:16px; border:1px solid var(--fc-line-strong);
+  box-shadow:0 14px 40px rgba(0,0,0,.55);
+  filter:contrast(1.04) saturate(.82) brightness(.97);
+}
+
+/* --- Vorteile-Grid --- */
+.fc .perks{
+  list-style:none; margin:20px 0 8px; padding:0;
+  display:grid; grid-template-columns:repeat(2,1fr); gap:12px;
+}
+.fc .perks li{
+  display:flex; align-items:center; gap:13px;
+  background:linear-gradient(150deg,var(--fc-card1),var(--fc-card2));
+  border:1px solid var(--fc-line); border-radius:11px;
+  padding:13px 17px; color:var(--fc-cream); font-weight:600;
+  transition:transform .2s ease, border-color .2s ease, background .2s ease;
+}
+.fc .perks li::before{
+  content:"✦"; flex:0 0 auto;
+  display:inline-flex; align-items:center; justify-content:center;
+  width:30px; height:30px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,var(--fc-amber),var(--fc-gold-dim));
+  color:#1b160a; font-size:15px; font-weight:900;
+  box-shadow:0 0 12px -2px rgba(216,188,96,.6);
+}
+.fc .perks li:hover{
+  transform:translateX(5px); border-color:var(--fc-line-strong);
+  background:linear-gradient(150deg,#262b37,#1d222b);
+}
+.fc .perks li .new{color:var(--fc-red); font-weight:800; margin-right:2px;}
+
+.fc .clear{clear:both;}
+
+/* --- Responsive --- */
+@media(max-width:700px){
+  .fc{padding:6px 15px 40px; font-size:15.5px;}
+  .fc .perks{grid-template-columns:1fr;}
+  .fc .media{float:none; width:100%; max-width:100%; margin:0 0 14px;}
+  .fc .card{padding:18px 18px;}
+  .fc .lead{padding:22px 20px;}
+}
