@@ -19,6 +19,331 @@
 }
 .fc *{box-sizing:border-box;}
 .fc p{margin:0 0 15px;}
+.fc a{color:var(--fc-amber); text-decoration:underline; background:none;}
+.fc a:hover{color:var(--fc-gold);}
+.fc img{max-width:100%;}
+
+/* Sender-Karten + CTA-Button NICHT unterstreichen */
+.fc a.cam, .fc a.cta{text-decoration:none !important;}
+
+/* --- Signup-CTA-Button (ganz unten) --- */
+.fc .cta-wrap{text-align:center; margin:34px 0 8px;}
+.fc a.cta{
+  display:inline-block; color:#17130a !important; font-weight:800;
+  font-size:clamp(16px,2.3vw,20px); letter-spacing:.3px; line-height:1.2;
+  padding:17px 36px; border-radius:44px;
+  background:linear-gradient(135deg,#fff2c8,var(--fc-amber) 45%,var(--fc-gold-dim));
+  border:1px solid rgba(255,244,208,.6);
+  box-shadow:0 10px 28px -6px rgba(216,188,96,.6), inset 0 1px 1px rgba(255,255,255,.5);
+  transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+.fc a.cta::before{font-family:'FontAwesome'; content:"\f06d"; margin-right:11px;}  /* Flamme */
+.fc a.cta:hover{
+  transform:translateY(-2px) scale(1.02); filter:brightness(1.05);
+  box-shadow:0 14px 34px -6px rgba(234,201,92,.8), inset 0 1px 1px rgba(255,255,255,.6);
+}
+
+/* --- Keywords --- */
+.fc .kw{color:var(--fc-amber); font-weight:700;}
+.fc .kw-red{color:var(--fc-red); font-weight:700;}
+
+/* --- Ueberschriften --- */
+.fc .title{
+  text-align:center; margin:8px 0 6px;
+  font-size:clamp(23px,3.4vw,33px); font-weight:800; letter-spacing:.5px;
+  line-height:1.25;
+  background:linear-gradient(100deg,#fff6e2 0%,var(--fc-amber) 45%,var(--fc-gold-dim) 100%);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:var(--fc-amber);
+  text-shadow:0 1px 0 rgba(0,0,0,.3);
+}
+.fc .h2{
+  text-align:center; color:var(--fc-amber);
+  font-size:clamp(20px,2.6vw,26px); font-weight:800;
+  text-transform:uppercase; letter-spacing:1.4px; margin:6px 0 4px;
+}
+.fc .h3{
+  text-align:center; color:var(--fc-gold);
+  font-size:20px; font-weight:700; letter-spacing:.4px; margin:0 0 14px;
+}
+.fc .h4{
+  text-align:center; color:var(--fc-amber);
+  font-size:18px; font-weight:700; line-height:1.5;
+  max-width:820px; margin:6px auto 4px;
+}
+.fc .h5{
+  text-align:center; color:var(--fc-cream);
+  font-size:21px; font-weight:800; text-transform:uppercase;
+  letter-spacing:1.6px; margin:14px 0 6px;
+}
+
+/* --- Dekorativer Trenner ◆ --- */
+.fc .div{
+  display:flex; align-items:center; justify-content:center;
+  gap:16px; margin:22px 0 20px;
+}
+.fc .div::before, .fc .div::after{
+  content:""; height:1px; width:min(120px,22%);
+  background:linear-gradient(90deg,transparent,var(--fc-line-strong));
+}
+.fc .div::after{background:linear-gradient(90deg,var(--fc-line-strong),transparent);}
+.fc .div i{
+  color:var(--fc-gold); font-style:normal; font-size:12px;
+  letter-spacing:6px; transform:translateY(-1px);
+}
+
+/* --- Lead / Intro --- */
+.fc .lead{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(120% 140% at 0% 0%,rgba(216,188,96,.08),transparent 55%),
+    linear-gradient(160deg,var(--fc-card1),var(--fc-card2));
+  border:1px solid var(--fc-line); border-radius:16px;
+  padding:26px 32px; margin:14px 0 6px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+.fc .lead::before{
+  content:""; position:absolute; inset:0 0 auto 0; height:3px;
+  background:linear-gradient(90deg,transparent,var(--fc-gold),var(--fc-amber),var(--fc-gold),transparent);
+}
+.fc .lead p{margin:0; font-size:16.5px; color:#ddd7ca;}
+.fc .lead p::first-letter{
+  float:left; font-size:52px; line-height:.86; font-weight:800;
+  color:var(--fc-amber); margin:4px 12px 0 0;
+  text-shadow:0 2px 8px rgba(216,188,96,.35);
+}
+
+/* --- Textblock ohne Karte --- */
+.fc .prose{max-width:960px; margin:0 auto 6px;}
+
+/* --- Karte --- */
+.fc .card{
+  position:relative; display:block;
+  background:linear-gradient(155deg,var(--fc-card1),var(--fc-card2));
+  border:1px solid var(--fc-line); border-left:3px solid var(--fc-gold);
+  border-radius:13px; padding:22px 26px; margin:18px 0;
+  box-shadow:0 6px 20px rgba(0,0,0,.35);
+  transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+.fc .card::after{content:""; display:block; clear:both;}
+.fc .card:hover{
+  transform:translateY(-3px);
+  border-left-color:var(--fc-amber);
+  box-shadow:0 14px 34px rgba(0,0,0,.5), 0 0 0 1px rgba(216,188,96,.28),
+             0 0 26px -6px rgba(216,188,96,.35);
+}
+.fc .card.alt{background:linear-gradient(155deg,#242835,#1b1f27);}
+
+/* --- Float-Medien --- */
+.fc .media{
+  width:320px; max-width:44%; border-radius:11px;
+  border:1px solid var(--fc-line-strong);
+  box-shadow:0 8px 20px rgba(0,0,0,.5);
+  transition:transform .3s ease, box-shadow .3s ease;
+  display:block;
+}
+.fc .media.left{float:left !important; margin:2px 22px 12px 0;}
+.fc .media.right{float:right !important; margin:2px 0 12px 22px;}
+.fc .card:hover .media{transform:scale(1.03); box-shadow:0 12px 26px rgba(0,0,0,.6);}
+
+/* --- Feature-Strip + Hero-Bild --- */
+.fc .strip{
+  display:block; margin:8px auto 22px; max-width:100%; height:auto;
+  border-radius:10px; filter:drop-shadow(0 8px 18px rgba(0,0,0,.5));
+}
+.fc .hero{
+  display:block; margin:22px auto 8px; max-width:100%; height:auto;
+  border-radius:16px; border:1px solid var(--fc-line-strong);
+  box-shadow:0 14px 40px rgba(0,0,0,.55);
+  filter:contrast(1.04) saturate(.82) brightness(.97);
+}
+
+/* --- Vorteile-Grid mit Icons --- */
+.fc .perks{
+  list-style:none !important; margin:20px 0 8px; padding:0 !important;
+  display:grid !important; grid-template-columns:repeat(2,1fr) !important; gap:12px;
+}
+.fc .perks li{
+  display:flex !important; float:none !important; width:auto !important;
+  align-items:center; gap:14px;
+  background:linear-gradient(150deg,var(--fc-card1),var(--fc-card2));
+  border:1px solid var(--fc-line); border-radius:11px;
+  padding:13px 17px; color:var(--fc-cream); font-weight:600;
+  list-style:none !important;
+  transition:transform .2s ease, border-color .2s ease, background .2s ease;
+}
+.fc .perks li::marker{content:"";}
+.fc .perks .ic{
+  flex:0 0 auto; width:38px; height:38px; border-radius:50%;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:radial-gradient(circle at 34% 28%,var(--fc-amber),var(--fc-gold-dim));
+  box-shadow:0 0 14px -3px rgba(216,188,96,.7), inset 0 1px 1px rgba(255,255,255,.35);
+  color:#1a1509;
+}
+/* Icons via Font-Awesome-Glyph (Theme laedt FontAwesome 4.2) — SVG wird vom WL gestrippt */
+.fc .perks .ic::before{
+  font-family:'FontAwesome'; font-weight:normal; font-style:normal;
+  font-size:18px; line-height:1; -webkit-font-smoothing:antialiased;
+}
+.fc .perks .pk-profil .ic::before{content:"\f007";}   /* user */
+.fc .perks .pk-chat   .ic::before{content:"\f086";}   /* comments */
+.fc .perks .pk-cam    .ic::before{content:"\f03d";}   /* video-camera */
+.fc .perks .pk-hd     .ic::before{content:"\f108";}   /* desktop */
+.fc .perks .pk-4k     .ic::before{content:"\f005";}   /* star */
+.fc .perks .pk-gift   .ic::before{content:"\f06b";}   /* gift */
+.fc .perks .pk-shield .ic::before{content:"\f132";}   /* shield */
+.fc .perks .pk-crypto .ic::before{content:"\f15a";}   /* btc */
+.fc .perks li:hover{
+  transform:translateX(5px); border-color:var(--fc-line-strong);
+  background:linear-gradient(150deg,#262b37,#1d222b);
+}
+.fc .perks li:hover .ic{box-shadow:0 0 20px -2px rgba(234,201,92,.85), inset 0 1px 1px rgba(255,255,255,.4);}
+.fc .perks li .new{color:var(--fc-red); font-weight:800; margin-right:2px;}
+
+/* --- Nischen-Blocks + Sender-Grid --- */
+.fc .niches{margin:10px 0 6px;}
+.fc .niche{margin:26px 0;}
+.fc .niche > .lbl{
+  display:flex; align-items:center; gap:12px; margin:0 0 4px;
+  color:var(--fc-amber); font-size:20px; font-weight:800; letter-spacing:.3px;
+}
+.fc .niche > .lbl::before{content:""; width:26px; height:3px; border-radius:2px;
+  background:linear-gradient(90deg,var(--fc-gold),transparent);}
+.fc .niche > .lbl .cnt{
+  font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+  color:var(--fc-gold-dim); border:1px solid var(--fc-line); border-radius:20px;
+  padding:2px 10px; margin-left:auto;
+}
+.fc .niche > .txt{color:var(--fc-text); max-width:900px; margin:0 0 12px; font-size:15px;}
+.fc .niche > .txt .kw{color:var(--fc-amber);}
+
+.fc .grid{
+  display:grid !important;
+  grid-template-columns:repeat(5,1fr) !important;
+  gap:11px !important; margin:0; padding:0; list-style:none;
+}
+/* Theme haengt Clearfix-Pseudos an div-Container -> unter display:grid werden die
+   zu Phantom-Zellen (leerer erster Slot). Auf allen Grid-Containern abschalten. */
+.fc .grid::before, .fc .grid::after,
+.fc .perks::before, .fc .perks::after,
+.fc .kinks::before, .fc .kinks::after{content:none !important; display:none !important;}
+.fc .cam{
+  position:relative; display:block !important; float:none !important; width:auto !important;
+  text-decoration:none;
+  border:1px solid var(--fc-line); border-radius:11px; overflow:hidden;
+  background:var(--fc-card2); transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.fc .cam .ph{
+  display:block !important; width:100% !important; height:auto !important; float:none !important;
+  aspect-ratio:265/199; object-fit:cover; margin:0 !important;
+  filter:saturate(.96) contrast(1.02);
+}
+.fc .cam .meta{display:block; padding:7px 10px 9px;}
+.fc .cam .meta b{display:block; color:var(--fc-cream); font-size:13px; font-weight:700;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.fc .cam .meta em{display:block; color:var(--fc-muted); font-style:normal; font-size:11.5px; margin-top:1px;}
+.fc .cam .meta .fet{
+  display:inline-block; margin-top:6px; max-width:100%;
+  font-size:10.5px; font-weight:700; letter-spacing:.3px; color:var(--fc-amber);
+  background:rgba(216,188,96,.12); border:1px solid var(--fc-line);
+  border-radius:20px; padding:2px 9px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; vertical-align:top;
+}
+.fc .cam::after{content:""; position:absolute; inset:auto 0 0 0; height:38%;
+  background:linear-gradient(0deg,rgba(0,0,0,.35),transparent); pointer-events:none;}
+.fc .cam:hover{transform:translateY(-4px); border-color:var(--fc-line-strong);
+  box-shadow:0 10px 24px rgba(0,0,0,.55), 0 0 20px -6px rgba(216,188,96,.5);}
+.fc .cam:hover .ph{filter:saturate(1.05) contrast(1.04) brightness(1.03);}
+
+/* --- Beliebte-Cams-Grid (Unterseiten) = 4 Spalten --- */
+.fc .grid.g4{grid-template-columns:repeat(4,1fr) !important;}
+
+/* --- Kink-Liste (Unterseiten) --- */
+.fc .kinks{list-style:none !important; margin:18px 0 6px; padding:0 !important;
+  display:grid !important; grid-template-columns:1fr 1fr !important; gap:12px;}
+.fc .kinks li{
+  display:block !important; float:none !important; width:auto !important; list-style:none !important;
+  background:linear-gradient(155deg,var(--fc-card1),var(--fc-card2));
+  border:1px solid var(--fc-line); border-left:3px solid var(--fc-gold);
+  border-radius:11px; padding:14px 17px; transition:border-color .2s ease, transform .2s ease;}
+.fc .kinks li::marker{content:"";}
+.fc .kinks li:hover{border-left-color:var(--fc-amber); transform:translateY(-2px);}
+.fc .kinks li b{display:block; color:var(--fc-amber); font-size:15px; margin-bottom:3px;}
+.fc .kinks li span{color:var(--fc-text); font-size:14px; line-height:1.55;}
+.fc .kinks.simple{grid-template-columns:1fr !important;}
+
+/* --- Freaky-Fetische (Extravagant-Sektion) mit Icons --- */
+.fc .freaky{list-style:none !important; margin:16px 0 6px; padding:0 !important;
+  display:grid !important; grid-template-columns:1fr 1fr !important; gap:12px;}
+.fc .freaky::before, .fc .freaky::after{content:none !important; display:none !important;}
+.fc .freaky li{
+  display:flex !important; float:none !important; width:auto !important; gap:15px;
+  list-style:none !important; align-items:flex-start;
+  background:linear-gradient(155deg,var(--fc-card1),var(--fc-card2));
+  border:1px solid var(--fc-line); border-left:3px solid var(--fc-gold);
+  border-radius:12px; padding:16px 18px;
+  transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;}
+.fc .freaky li::marker{content:"";}
+.fc .freaky li:hover{border-left-color:var(--fc-amber); transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(0,0,0,.4);}
+.fc .freaky .fic{
+  flex:0 0 auto; width:42px; height:42px; border-radius:50%; margin-top:1px;
+  display:inline-flex; align-items:center; justify-content:center; color:#1a1509;
+  background:radial-gradient(circle at 34% 28%,var(--fc-amber),var(--fc-gold-dim));
+  box-shadow:0 0 14px -3px rgba(216,188,96,.7), inset 0 1px 1px rgba(255,255,255,.35);}
+.fc .freaky .fic::before{font-family:'FontAwesome'; font-weight:normal; font-size:20px; line-height:1;}
+.fc .freaky .fi-joi      .fic::before{content:"\f0a6";}  /* hand-o-up */
+.fc .freaky .fi-cosplay  .fic::before{content:"\f0d0";}  /* magic */
+.fc .freaky .fi-ns       .fic::before{content:"\f043";}  /* tint */
+.fc .freaky .fi-kv       .fic::before{content:"\f0c3";}  /* flask */
+.fc .freaky .fi-sissy    .fic::before{content:"\f182";}  /* female */
+.fc .freaky .fi-findom   .fic::before{content:"\f0d6";}  /* money */
+.fc .freaky .fi-klinik   .fic::before{content:"\f0fa";}  /* medkit */
+.fc .freaky .fi-chastity .fic::before{content:"\f023";}  /* lock */
+.fc .freaky .fi-spanking .fic::before{content:"\f0e7";}  /* bolt */
+.fc .freaky .fi-voyeur   .fic::before{content:"\f06e";}  /* eye */
+.fc .freaky .tx b{display:block; color:var(--fc-amber); font-size:15px; margin-bottom:3px;}
+.fc .freaky .tx span{color:var(--fc-text); font-size:13.5px; line-height:1.55;}
+
+.fc .clear{clear:both;}
+
+/* --- Grids responsive Stufen --- */
+@media(max-width:1000px){ .fc .grid{grid-template-columns:repeat(4,1fr) !important;} }
+@media(max-width:760px){ .fc .grid, .fc .grid.g4{grid-template-columns:repeat(3,1fr) !important;} }
+@media(max-width:470px){ .fc .grid, .fc .grid.g4{grid-template-columns:repeat(2,1fr) !important;} }
+
+/* --- Responsive --- */
+@media(max-width:700px){
+  .fc{padding:6px 15px 40px; font-size:15.5px;}
+  .fc .perks{grid-template-columns:1fr !important;}
+  .fc .kinks{grid-template-columns:1fr !important;}
+  .fc .freaky{grid-template-columns:1fr !important;}
+  .fc .media{float:none !important; width:100% !important; max-width:100%; margin:0 0 14px;}
+  .fc .card{padding:18px 18px;}
+  .fc .lead{padding:22px 20px;}
+  .fc .niche > .lbl{font-size:18px;}
+}
+/* fetisch-cam.one — externes Stylesheet (Whitelabel Custom-CSS via stoile.css)
+   Farbwelt aus header.png: Anthrazit-Grund + Gold + Creme, roter Akzent.
+   Alle Regeln unter .fc gescoped. WICHTIG: Das WL-Theme erzwingt float/display/width
+   auf a/img/ul/li im Content -> Layout-kritische Properties brauchen !important. */
+
+.fc{
+  --fc-bg:#16181e; --fc-bg2:#23262e;
+  --fc-gold:#d8bc60; --fc-amber:#eac95c; --fc-gold-dim:#9c8340;
+  --fc-cream:#f4efe4; --fc-text:#cfc9bc; --fc-muted:#9a958a;
+  --fc-red:#e23a44;
+  --fc-card1:#20242e; --fc-card2:#191c23;
+  --fc-line:rgba(216,188,96,.16);
+  --fc-line-strong:rgba(216,188,96,.4);
+  max-width:1140px; margin:0 auto; padding:6px 22px 46px;
+  color:var(--fc-text);
+  font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px; line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+}
+.fc *{box-sizing:border-box;}
+.fc p{margin:0 0 15px;}
 .fc a{color:var(--fc-amber); text-decoration:none; background:none;}
 .fc a:hover{color:var(--fc-gold); text-decoration:underline;}
 .fc img{max-width:100%;}
