@@ -158,9 +158,21 @@
   display:inline-flex; align-items:center; justify-content:center;
   background:radial-gradient(circle at 34% 28%,var(--fc-amber),var(--fc-gold-dim));
   box-shadow:0 0 14px -3px rgba(216,188,96,.7), inset 0 1px 1px rgba(255,255,255,.35);
+  color:#1a1509;
 }
-.fc .perks .ic svg{width:20px; height:20px; display:block;
-  fill:none; stroke:#1a1509; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;}
+/* Icons via Font-Awesome-Glyph (Theme laedt FontAwesome 4.2) — SVG wird vom WL gestrippt */
+.fc .perks .ic::before{
+  font-family:'FontAwesome'; font-weight:normal; font-style:normal;
+  font-size:18px; line-height:1; -webkit-font-smoothing:antialiased;
+}
+.fc .perks .pk-profil .ic::before{content:"\f007";}   /* user */
+.fc .perks .pk-chat   .ic::before{content:"\f086";}   /* comments */
+.fc .perks .pk-cam    .ic::before{content:"\f03d";}   /* video-camera */
+.fc .perks .pk-hd     .ic::before{content:"\f108";}   /* desktop */
+.fc .perks .pk-4k     .ic::before{content:"\f005";}   /* star */
+.fc .perks .pk-gift   .ic::before{content:"\f06b";}   /* gift */
+.fc .perks .pk-shield .ic::before{content:"\f132";}   /* shield */
+.fc .perks .pk-crypto .ic::before{content:"\f15a";}   /* btc */
 .fc .perks li:hover{
   transform:translateX(5px); border-color:var(--fc-line-strong);
   background:linear-gradient(150deg,#262b37,#1d222b);
@@ -190,6 +202,11 @@
   grid-template-columns:repeat(5,1fr) !important;
   gap:11px !important; margin:0; padding:0; list-style:none;
 }
+/* Theme haengt Clearfix-Pseudos an div-Container -> unter display:grid werden die
+   zu Phantom-Zellen (leerer erster Slot). Auf allen Grid-Containern abschalten. */
+.fc .grid::before, .fc .grid::after,
+.fc .perks::before, .fc .perks::after,
+.fc .kinks::before, .fc .kinks::after{content:none !important; display:none !important;}
 .fc .cam{
   position:relative; display:block !important; float:none !important; width:auto !important;
   text-decoration:none;
@@ -205,6 +222,13 @@
 .fc .cam .meta b{display:block; color:var(--fc-cream); font-size:13px; font-weight:700;
   white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 .fc .cam .meta em{display:block; color:var(--fc-muted); font-style:normal; font-size:11.5px; margin-top:1px;}
+.fc .cam .meta .fet{
+  display:inline-block; margin-top:6px; max-width:100%;
+  font-size:10.5px; font-weight:700; letter-spacing:.3px; color:var(--fc-amber);
+  background:rgba(216,188,96,.12); border:1px solid var(--fc-line);
+  border-radius:20px; padding:2px 9px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; vertical-align:top;
+}
 .fc .cam::after{content:""; position:absolute; inset:auto 0 0 0; height:38%;
   background:linear-gradient(0deg,rgba(0,0,0,.35),transparent); pointer-events:none;}
 .fc .cam:hover{transform:translateY(-4px); border-color:var(--fc-line-strong);
