@@ -259,19 +259,57 @@
 /* --- Beliebte-Cams-Grid (Unterseiten) = 4 Spalten --- */
 .fc .grid.g4{grid-template-columns:repeat(4,1fr) !important;}
 
-/* --- Kink-Liste (Unterseiten) --- */
+/* --- Kink-Liste (Unterseiten) mit Icons --- */
 .fc .kinks{list-style:none !important; margin:18px 0 6px; padding:0 !important;
   display:grid !important; grid-template-columns:1fr 1fr !important; gap:12px;}
+.fc .kinks::before, .fc .kinks::after{content:none !important; display:none !important;}
 .fc .kinks li{
-  display:block !important; float:none !important; width:auto !important; list-style:none !important;
+  display:flex !important; float:none !important; width:auto !important; gap:15px;
+  align-items:flex-start; list-style:none !important;
   background:linear-gradient(155deg,var(--fc-card1),var(--fc-card2));
   border:1px solid var(--fc-line); border-left:3px solid var(--fc-gold);
-  border-radius:11px; padding:14px 17px; transition:border-color .2s ease, transform .2s ease;}
+  border-radius:12px; padding:16px 18px; transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;}
 .fc .kinks li::marker{content:"";}
-.fc .kinks li:hover{border-left-color:var(--fc-amber); transform:translateY(-2px);}
-.fc .kinks li b{display:block; color:var(--fc-amber); font-size:15px; margin-bottom:3px;}
-.fc .kinks li span{color:var(--fc-text); font-size:14px; line-height:1.55;}
+.fc .kinks li:hover{border-left-color:var(--fc-amber); transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(0,0,0,.4);}
+.fc .kinks .kic{
+  flex:0 0 auto; width:42px; height:42px; border-radius:50%; margin-top:1px;
+  display:inline-flex; align-items:center; justify-content:center; color:#1a1509;
+  background:radial-gradient(circle at 34% 28%,var(--fc-amber),var(--fc-gold-dim));
+  box-shadow:0 0 14px -3px rgba(216,188,96,.7), inset 0 1px 1px rgba(255,255,255,.35);}
+.fc .kinks .kic::before{font-family:'FontAwesome'; font-weight:normal; font-size:19px; line-height:1;}
+.fc .kinks .tx{min-width:0;}
+.fc .kinks .tx b{
+  display:block !important; color:var(--fc-amber); font-size:15px; font-weight:800;
+  letter-spacing:.2px; margin:0 0 8px; padding-bottom:8px; border-bottom:1px solid var(--fc-line);}
+.fc .kinks .tx span{display:block !important; color:var(--fc-text); font-size:13.5px; line-height:1.6;}
 .fc .kinks.simple{grid-template-columns:1fr !important;}
+/* Kink-Icons (FontAwesome 4.2) */
+.fc .kinks .ki-money        .kic::before{content:"\f0d6";}
+.fc .kinks .ki-humiliation  .kic::before{content:"\f088";}  /* thumbs-o-down */
+.fc .kinks .ki-lock         .kic::before{content:"\f023";}
+.fc .kinks .ki-graduation   .kic::before{content:"\f19d";}
+.fc .kinks .ki-handup       .kic::before{content:"\f0a6";}
+.fc .kinks .ki-female       .kic::before{content:"\f182";}
+.fc .kinks .ki-tasks        .kic::before{content:"\f0ae";}
+.fc .kinks .ki-frown        .kic::before{content:"\f119";}
+.fc .kinks .ki-handright    .kic::before{content:"\f0a4";}
+.fc .kinks .ki-cutlery      .kic::before{content:"\f0f5";}
+.fc .kinks .ki-link         .kic::before{content:"\f0c1";}
+.fc .kinks .ki-bolt         .kic::before{content:"\f0e7";}
+.fc .kinks .ki-paw          .kic::before{content:"\f1b0";}
+.fc .kinks .ki-users        .kic::before{content:"\f0c0";}
+.fc .kinks .ki-heart-o      .kic::before{content:"\f08a";}
+.fc .kinks .ki-key          .kic::before{content:"\f084";}
+.fc .kinks .ki-heart        .kic::before{content:"\f004";}
+.fc .kinks .ki-leaf         .kic::before{content:"\f06c";}
+.fc .kinks .ki-star         .kic::before{content:"\f005";}
+.fc .kinks .ki-random       .kic::before{content:"\f074";}
+.fc .kinks .ki-handdown     .kic::before{content:"\f0a7";}
+.fc .kinks .ki-brush        .kic::before{content:"\f1fc";}
+.fc .kinks .ki-exchange     .kic::before{content:"\f0ec";}
+.fc .kinks .ki-globe        .kic::before{content:"\f0ac";}
+.fc .kinks .ki-user         .kic::before{content:"\f007";}
 
 /* --- Freaky-Fetische (Extravagant-Sektion) mit Icons --- */
 .fc .freaky{list-style:none !important; margin:16px 0 6px; padding:0 !important;
