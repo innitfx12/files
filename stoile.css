@@ -19,14 +19,9 @@
 
 /* === Tagline (ins .text-HTML-Feld unter H1/H2, in .fc.hd-scope gewrappt) === */
 .fc.hd-scope{max-width:none !important; margin:0 !important; padding:0 !important;}
-.fc .hd-tag{
-  color:var(--fc-text); font-size:15px; line-height:1.6; margin:0;
-  border-left:3px solid var(--fc-line); padding:3px 0 3px 14px;}
-.fc .hd-tag .ti{color:var(--fc-amber); margin-right:10px;}
-.fc .hd-tag .ti::before{font-family:'FontAwesome'; font-weight:normal; font-size:.95em;}
-.fc .hd-tag .ti-fire::before{content:"\f06d";}
-.fc .hd-tag .ti-gavel::before{content:"\f0e3";}
-.fc .hd-tag .ti-heart::before{content:"\f004";}
+.fc .hd-tag{color:var(--fc-text); font-size:15px; line-height:1.55; margin:0 !important; padding:0 !important; border:0 !important;}
+/* Icon = echtes FontAwesome-Glyph im Span (Jodit strippt leere Spans -> kein ::before) */
+.fc .hd-tag .ti{font-family:'FontAwesome'; font-style:normal; color:var(--fc-amber); margin-right:9px;}
 .fc .hd-tag .kw{color:var(--fc-amber); font-weight:700;}
 
 /* fetisch-cam.one — externes Stylesheet (Whitelabel Custom-CSS via stoile.css)
