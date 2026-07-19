@@ -1,3 +1,34 @@
+/* === Header H1 + H2 (Theme .seo-headline, Text kommt aus WL-Backend) schoener + Icons === */
+.seo-headline .title h1, .seo-headline h1{
+  display:inline-block !important; margin:2px 0 !important;
+  font-size:clamp(22px,3vw,32px) !important; font-weight:800 !important;
+  letter-spacing:.6px !important; line-height:1.2 !important; text-transform:uppercase;
+  color:#eac95c !important;
+  text-shadow:0 1px 0 rgba(0,0,0,.4), 0 0 22px rgba(216,188,96,.25);}
+.seo-headline .title h1::before, .seo-headline h1::before{
+  font-family:'FontAwesome'; content:"\f06d"; /* Flamme */
+  margin-right:13px; color:#d8bc60; font-size:.82em; vertical-align:1px;}
+.seo-headline h2{
+  display:inline-block !important; margin:4px 0 8px !important;
+  font-size:clamp(16px,2.1vw,21px) !important; font-weight:700 !important;
+  letter-spacing:.3px !important; line-height:1.3 !important;
+  color:#d8bc60 !important;}
+.seo-headline h2::before{
+  font-family:'FontAwesome'; content:"\f0da"; /* Caret */
+  margin-right:11px; color:var(--fc-gold-dim); font-size:.85em; vertical-align:1px;}
+
+/* === Tagline (ins .text-HTML-Feld unter H1/H2, in .fc.hd-scope gewrappt) === */
+.fc.hd-scope{max-width:none !important; margin:0 !important; padding:0 !important;}
+.fc .hd-tag{
+  color:var(--fc-text); font-size:15px; line-height:1.6; margin:0;
+  border-left:3px solid var(--fc-line); padding:3px 0 3px 14px;}
+.fc .hd-tag .ti{color:var(--fc-amber); margin-right:10px;}
+.fc .hd-tag .ti::before{font-family:'FontAwesome'; font-weight:normal; font-size:.95em;}
+.fc .hd-tag .ti-fire::before{content:"\f06d";}
+.fc .hd-tag .ti-gavel::before{content:"\f0e3";}
+.fc .hd-tag .ti-heart::before{content:"\f004";}
+.fc .hd-tag .kw{color:var(--fc-amber); font-weight:700;}
+
 /* fetisch-cam.one — externes Stylesheet (Whitelabel Custom-CSS via stoile.css)
    Farbwelt aus header.png: Anthrazit-Grund + Gold + Creme, roter Akzent.
    Alle Regeln unter .fc gescoped. WICHTIG: Das WL-Theme erzwingt float/display/width
